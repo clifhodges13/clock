@@ -1,0 +1,87 @@
+/* Global Reset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  box-sizing: inherit;
+  font-family: Futura;
+  color: white;
+  background-image: linear-gradient(to top right, rgb(98, 145, 199), rgb(23, 142, 91));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.clock {
+  width: auto;
+  height: 20vh;
+  padding: 0 4rem;
+  margin-bottom: 4rem;
+  background: green;
+  border: 5px solid lightgreen;
+  border-radius: 5px;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 .75rem 1rem rgba(0,0,0,.5);
+}
+
+.clock-analog, .clock-face {
+  height: 40vh;
+  width: 40vh;
+  position: relative;
+}
+
+.clock-face {
+  background: lightblue;
+  border-radius: 50%;
+  box-shadow: 0 .75rem 1rem rgba(0,0,0,.5);
+}
+
+.second-hand,
+.minute-hand,
+.hour-hand {
+  display: inline-block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: black;
+  transform-origin: bottom;
+  border-radius: 10px;
+}
+
+.second-hand {
+  top: 10.5%;
+  left: 49.55%;
+  height: 7rem;
+  width: .2rem;
+  transform: rotate(0);
+}
+
+.minute-hand {
+  top: 15.5%;
+  left: 49.55%;
+  height: 6rem;
+  width: .25rem;
+  transform: rotate(0);
+}
+
+.hour-hand {
+  top: 21.5%;
+  left: 49.55%;
+  height: 5rem;
+  width: .3rem;
+  transform: rotate(0);
+}
