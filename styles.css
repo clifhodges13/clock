@@ -24,6 +24,22 @@ body {
   height: 100vh;
 }
 
+/* Animations */
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+@keyframes antispin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 .clock {
   width: auto;
   height: 20vh;
@@ -43,6 +59,33 @@ body {
   height: 40vh;
   width: 40vh;
   position: relative;
+}
+
+.cog {
+  height: 50vh;
+  width: 50vh;
+  clip-path: circle(50%);
+  fill: url(#myGradient);
+  position: absolute;
+  z-index: -1;
+}
+
+.cog1 {
+  animation: spin 10s infinite cubic-bezier(1, 1, 0, 0);
+  left: 49vw;
+}
+
+.cog2 {
+  animation: antispin 10s infinite cubic-bezier(1, 1, 0, 0);
+  right: 49vw;
+}
+
+.cog3 {
+  animation: antispin 7s infinite cubic-bezier(1, 1, 0, 0);
+  right: 18vw;
+  top: 10vh;
+  height: 30vh;
+  width: 30vh;
 }
 
 .clock-face {
