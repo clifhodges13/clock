@@ -16,12 +16,14 @@ body {
   box-sizing: inherit;
   font-family: Futura;
   color: white;
-  background-image: linear-gradient(to top right, rgb(98, 145, 199), rgb(23, 142, 91));
+  background: linear-gradient(to bottom left, rgb(77, 148, 230), rgb(47, 216, 143));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 /* Animations */
@@ -31,13 +33,8 @@ body {
   to {transform: rotate(360deg);}
 }
 @keyframes antispin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(-360deg);
-  }
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-360deg);}
 }
 
 .clock {
@@ -45,7 +42,7 @@ body {
   height: 20vh;
   padding: 0 4rem;
   margin-bottom: 4rem;
-  background: green;
+  background: linear-gradient(to top right, rgb(18, 95, 47), rgb(14, 129, 58));
   border: 5px solid lightgreen;
   border-radius: 5px;
   font-size: 3rem;
@@ -53,6 +50,30 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 .75rem 1rem rgba(0,0,0,.5);
+}
+
+.clock:before {
+  content: '';
+  position: absolute;
+  height: 600vh;
+  width: 600vh;
+  top: 30%;
+  background: linear-gradient(to top right, rgba(18, 95, 47, .6) 0%, rgba(43, 145, 204, 0.6) 40%, rgb(70, 39, 182));
+  z-index: -2;
+  clip-path: circle(50%);
+  animation: antispin 10s infinite cubic-bezier(1, 1, 0, 0);
+}
+
+.clock:after {
+  content: '';
+  position: absolute;
+  height: 400vh;
+  width: 400vh;
+  top: 50%;
+  background: linear-gradient(to top right, rgba(18, 95, 47, .6), rgba(43, 145, 204, 0.6));
+  z-index: -2;
+  clip-path: circle(50%);
+  animation: spin 6s infinite cubic-bezier(1,1,0,0);
 }
 
 .clock-analog, .clock-face {
@@ -65,19 +86,20 @@ body {
   height: 50vh;
   width: 50vh;
   clip-path: circle(50%);
-  fill: url(#myGradient);
   position: absolute;
   z-index: -1;
 }
 
 .cog1 {
   animation: spin 10s infinite cubic-bezier(1, 1, 0, 0);
+  fill: url(#myGradient);
   left: 49vw;
 }
 
 .cog2 {
   animation: antispin 10s infinite cubic-bezier(1, 1, 0, 0);
   right: 49vw;
+  fill: url(#myGradient2);
 }
 
 .cog3 {
@@ -86,6 +108,7 @@ body {
   top: 10vh;
   height: 30vh;
   width: 30vh;
+  fill: url(#myGradient3);
 }
 
 .clock-face {
