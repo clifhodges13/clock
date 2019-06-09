@@ -20,6 +20,7 @@ body {
   color: white;
   background: -webkit-gradient(linear, right top, left bottom, from(rgb(77, 148, 230)), to(rgb(47, 216, 143)));
   background: linear-gradient(to bottom left, rgb(77, 148, 230), rgb(47, 216, 143));
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +36,8 @@ body {
           justify-content: center;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* Animations */
